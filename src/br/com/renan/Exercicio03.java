@@ -9,15 +9,31 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 public class Exercicio03 {
 
     public static void main(String[] args) {
-        MinhaThread mt = new MinhaThread();
-        SwingUtilities.invokeLater(mt);
+        Runnable thread = new Runnable() {
+            public void run() {
+                criarGUI();
+            }
+        };
+        SwingUtilities.invokeLater(thread);
     }
 
     public static void criarGUI() {
+
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+        }
+
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setMinimumSize(new Dimension(200, 100));
@@ -41,8 +57,13 @@ public class Exercicio03 {
                 float numero;
                 float soma = 0;
                 for (int i = 0; i < 3; i++) {
-                    numero = Float.parseFloat(JOptionPane.showInputDialog(frame, "Digite o número [" + (i + 1) + "]"));
-                    soma += numero;
+                    try {
+                        numero = Float.parseFloat(JOptionPane.showInputDialog(frame, "Digite o número [" + (i + 1) + "]"));
+                        soma += numero;
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(frame, "Entrada inválida!");
+                        i--;
+                    }
                 }
                 float media = soma / 3;
                 JOptionPane.showMessageDialog(frame, "A média é: " + media);
