@@ -120,9 +120,11 @@ public class Exercicio05 {
                 } else if (divisao.isSelected()) {
                     float divideNumeros = numeroDigitado1 / numeroDigitado2;
                     JOptionPane.showMessageDialog(frame, "Resultado da divisão: " + divideNumeros);
-                } else {
+                } else if (multiplicacao.isSelected()){
                     float multiplicaNumeros = numeroDigitado1 * numeroDigitado2;
                     JOptionPane.showMessageDialog(frame, "Resultado da multiplicação: " + multiplicaNumeros);
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Selecione uma operação!");
                 }
             }
 
