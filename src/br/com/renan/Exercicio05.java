@@ -109,22 +109,26 @@ public class Exercicio05 {
         buttonCalcular.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent ae) {
-                float numeroDigitado1 = Float.parseFloat(fieldNumero1.getText());
-                float numeroDigitado2 = Float.parseFloat(fieldNumero2.getText());
-                if (soma.isSelected()) {
-                    float somaNumeros = numeroDigitado1 + numeroDigitado2;
-                    JOptionPane.showMessageDialog(frame, "Resultado da soma: " + somaNumeros);
-                } else if (subtracao.isSelected()) {
-                    float subtraiNumeros = numeroDigitado1 - numeroDigitado2;
-                    JOptionPane.showMessageDialog(frame, "Resultado da subtração: " + subtraiNumeros);
-                } else if (divisao.isSelected()) {
-                    float divideNumeros = numeroDigitado1 / numeroDigitado2;
-                    JOptionPane.showMessageDialog(frame, "Resultado da divisão: " + divideNumeros);
-                } else if (multiplicacao.isSelected()){
-                    float multiplicaNumeros = numeroDigitado1 * numeroDigitado2;
-                    JOptionPane.showMessageDialog(frame, "Resultado da multiplicação: " + multiplicaNumeros);
-                } else {
-                    JOptionPane.showMessageDialog(frame, "Selecione uma operação!");
+                try {
+                    float numeroDigitado1 = Float.parseFloat(fieldNumero1.getText());
+                    float numeroDigitado2 = Float.parseFloat(fieldNumero2.getText());
+                    if (soma.isSelected()) {
+                        float somaNumeros = numeroDigitado1 + numeroDigitado2;
+                        JOptionPane.showMessageDialog(frame, "Resultado da soma: " + somaNumeros);
+                    } else if (subtracao.isSelected()) {
+                        float subtraiNumeros = numeroDigitado1 - numeroDigitado2;
+                        JOptionPane.showMessageDialog(frame, "Resultado da subtração: " + subtraiNumeros);
+                    } else if (divisao.isSelected()) {
+                        float divideNumeros = numeroDigitado1 / numeroDigitado2;
+                        JOptionPane.showMessageDialog(frame, "Resultado da divisão: " + divideNumeros);
+                    } else if (multiplicacao.isSelected()) {
+                        float multiplicaNumeros = numeroDigitado1 * numeroDigitado2;
+                        JOptionPane.showMessageDialog(frame, "Resultado da multiplicação: " + multiplicaNumeros);
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "Selecione uma operação!");
+                    }
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(frame, "Entrada inválida!");
                 }
             }
 
