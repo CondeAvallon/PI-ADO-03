@@ -56,7 +56,7 @@ public class Exercicio02 {
         button.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent ae) {
-                int numeroAleatorio = rnd.nextInt(9)+1;
+                int numeroAleatorio = rnd.nextInt(9) + 1;
                 int tentativas = 5;
                 while (tentativas != 0) {
                     try {
@@ -74,7 +74,7 @@ public class Exercicio02 {
                             }
                         }
                     } catch (Exception ex) {
-                        System.out.println("Entrada inválida!");
+                        JOptionPane.showMessageDialog(frame, "Entrada inválida!");
                     }
                 }
             }
