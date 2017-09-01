@@ -109,19 +109,19 @@ public class Exercicio05 {
         buttonCalcular.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent ae) {
-                int numeroDigitado1 = Integer.parseInt(fieldNumero1.getText());
-                int numeroDigitado2 = Integer.parseInt(fieldNumero2.getText());
+                float numeroDigitado1 = Float.parseFloat(fieldNumero1.getText());
+                float numeroDigitado2 = Float.parseFloat(fieldNumero2.getText());
                 if (soma.isSelected()) {
-                    int somaNumeros = numeroDigitado1 + numeroDigitado2;
+                    float somaNumeros = numeroDigitado1 + numeroDigitado2;
                     JOptionPane.showMessageDialog(frame, "Resultado da soma: " + somaNumeros);
                 } else if (subtracao.isSelected()) {
-                    int subtraiNumeros = numeroDigitado1 - numeroDigitado2;
+                    float subtraiNumeros = numeroDigitado1 - numeroDigitado2;
                     JOptionPane.showMessageDialog(frame, "Resultado da subtração: " + subtraiNumeros);
                 } else if (divisao.isSelected()) {
-                    int divideNumeros = numeroDigitado1 / numeroDigitado2;
+                    float divideNumeros = numeroDigitado1 / numeroDigitado2;
                     JOptionPane.showMessageDialog(frame, "Resultado da divisão: " + divideNumeros);
                 } else {
-                    int multiplicaNumeros = numeroDigitado1 * numeroDigitado2;
+                    float multiplicaNumeros = numeroDigitado1 * numeroDigitado2;
                     JOptionPane.showMessageDialog(frame, "Resultado da multiplicação: " + multiplicaNumeros);
                 }
             }
