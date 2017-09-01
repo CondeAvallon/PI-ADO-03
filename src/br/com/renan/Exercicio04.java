@@ -66,6 +66,7 @@ public class Exercicio04 {
                 jogoSalvo.setText(fieldJogo.getText());
                 String jogo = jogoSalvo.getText();
                 jogo = jogo.toUpperCase();
+                jogo = jogo.trim();
                 if (!jogo.equals(" ") && !jogo.equals("")) {
                     listaJogos[i] = jogo;
                     i++;

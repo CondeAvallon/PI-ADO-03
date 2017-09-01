@@ -54,10 +54,10 @@ public class Exercicio02 {
         Random rnd = new Random();
 
         button.addActionListener(new ActionListener() {
-            int numeroAleatorio = rnd.nextInt(9 + 1);
-            int tentativas = 5;
 
             public void actionPerformed(ActionEvent ae) {
+                int numeroAleatorio = rnd.nextInt(9)+1;
+                int tentativas = 5;
                 while (tentativas != 0) {
                     try {
                         int numeroDigitado = Integer.parseInt(JOptionPane.showInputDialog(frame, "Tente acertar o número!"));

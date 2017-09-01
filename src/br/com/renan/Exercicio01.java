@@ -46,7 +46,7 @@ public class Exercicio01 {
 
         JPanel panel = new JPanel();
         frame.getContentPane().add(panel);
-        panel.setLayout(new GridLayout(4, 0));
+        panel.setLayout(new GridLayout(3, 0));
 
         JPanel panel2 = new JPanel();
         panel.add(panel2);
